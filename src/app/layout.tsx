@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Merriweather, Quicksand, Poppins, Libre_Baskerville,Plus_Jakarta_Sans } from "next/font/google";
 
 import { ActiveThemeProvider } from "@/components/theme/active-theme";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -14,9 +14,35 @@ export const metadata: Metadata = {
 	icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
+const merriweather = Merriweather({
+	weight: "400",
 	subsets: ["latin"],
-	variable: "--font-geist-sans",
+	variable: "--font-merriweather",
+});
+
+const quicksand = Quicksand({
+	weight: ["400", "700"],
+	subsets: ["latin"],
+	variable: "--font-quicksand",
+});
+
+const poppins = Poppins({
+	weight: ["400", "700"],
+	subsets: ["latin"],
+	variable: "--font-poppins",
+});
+
+const libreBaskerville = Libre_Baskerville({
+	weight: ["400", "700"],
+	subsets: ["latin"],
+	variable: "--font-libre-baskerville",
+});
+
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+	weight: ["400", "700"],
+	subsets: ["latin"],
+	variable: "--font-libre-plus-jakarta-sans",
 });
 
 export default async function RootLayout({
@@ -29,14 +55,18 @@ export default async function RootLayout({
 		<html lang="zh" suppressHydrationWarning>
 			<body
 				className={cn(
-					`${geist.variable}`,
+					`${merriweather.variable}`,
+					`${quicksand.variable}`,
+					`${poppins.variable}`,
+					`${libreBaskerville.variable}`,
+					`${plusJakartaSans.variable}`,
 					"antialiased",
 					activeThemeValue ? `theme-${activeThemeValue}` : "",
 				)}
 			>
 				<ThemeProvider attribute="class" disableTransitionOnChange enableSystem>
 					<ActiveThemeProvider initialTheme={activeThemeValue}>
-						{children}
+							{children}
 					</ActiveThemeProvider>
 				</ThemeProvider>
 			</body>
