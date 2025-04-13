@@ -1,7 +1,13 @@
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
-import { Merriweather, Quicksand, Poppins, Libre_Baskerville,Plus_Jakarta_Sans } from "next/font/google";
+import {
+	Libre_Baskerville,
+	Merriweather,
+	Plus_Jakarta_Sans,
+	Poppins,
+	Quicksand,
+} from "next/font/google";
 
 import { ActiveThemeProvider } from "@/components/theme/active-theme";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -38,7 +44,6 @@ const libreBaskerville = Libre_Baskerville({
 	variable: "--font-libre-baskerville",
 });
 
-
 const plusJakartaSans = Plus_Jakarta_Sans({
 	weight: ["400", "700"],
 	subsets: ["latin"],
@@ -66,7 +71,7 @@ export default async function RootLayout({
 			>
 				<ThemeProvider attribute="class" disableTransitionOnChange enableSystem>
 					<ActiveThemeProvider initialTheme={activeThemeValue}>
-							{children}
+						{children}
 					</ActiveThemeProvider>
 				</ThemeProvider>
 			</body>
