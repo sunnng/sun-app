@@ -12,7 +12,14 @@ import {
 import { ActiveThemeProvider } from "@/components/theme/active-theme";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { cn } from "@/lib/utils";
+import localFont from "next/font/local";
 import { cookies } from "next/headers";
+
+export const mySans = localFont({
+	src: "./fonts/AlimamaFangYuanTiVF-Thin.woff2",
+	variable: "--my-font",
+	weight: "100 900",
+});
 
 export const metadata: Metadata = {
 	title: "Create T3 App",
@@ -21,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const merriweather = Merriweather({
-	weight: "400",
+	weight: ["400", "700"],
 	subsets: ["latin"],
 	variable: "--font-merriweather",
 });
@@ -65,7 +72,8 @@ export default async function RootLayout({
 					`${poppins.variable}`,
 					`${libreBaskerville.variable}`,
 					`${plusJakartaSans.variable}`,
-					"antialiased",
+					`${mySans.variable}`,
+					"antialiased font-[family-name:var(--font-sans)]",
 					activeThemeValue ? `theme-${activeThemeValue}` : "",
 				)}
 			>
