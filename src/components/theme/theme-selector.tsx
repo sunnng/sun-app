@@ -22,8 +22,6 @@ export function ThemeSelector() {
 	const [mounted, setMounted] = React.useState(false);
 	const { setTheme, resolvedTheme: theme } = useTheme();
 
-	console.log(theme);
-
 	React.useEffect(() => {
 		setMounted(true);
 	}, []);

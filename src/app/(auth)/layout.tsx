@@ -16,7 +16,7 @@ export default async function AuthLayout({
 				)}
 			/>
 			<div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-			<div className="absolute flex justify-center gap-2 md:justify-start top-10 left-10">
+			<div className="absolute top-10 left-10 flex justify-center gap-2 md:justify-start">
 				<Link href="#" className="flex items-center gap-2 font-medium">
 					<div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
 						<CookieIcon className="size-4" />
